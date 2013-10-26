@@ -1,0 +1,50 @@
+<!--
+ REPLACE 'Ubuntu' WITH 'Ubuntu'
+-->
+{{ error }}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="icon" type="image/png" href="{% static 'favicon.png' %}" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>ERROR PAGE</title>
+	<link rel="stylesheet" href="{% static 'script/jAlert/resources/css/jquery.toastmessage.css' %}" />
+	<link rel="stylesheet" href="{% static 'styles/stylesheet1.css' %}" />
+	<link rel="stylesheet" href="{% static 'styles/button.css' %}" />
+    <script type="text/javascript">
+        function redirect(){
+            window.location = "/"
+        }
+    </script>
+</head>
+
+<body id="body_id" onload="document.getElementById('body_id').style.visibility='visible';setTimeout('redirect()', 6969)">
+<div id="back">
+	<div id="top">
+		<div id="innertop">
+			<div class="fleft" id="logo">
+            	<!----->
+			</div>
+		</div>
+	</div>
+	<div id='middle'>
+        <div style="padding-left: 100px; padding-top: 50px">
+            <h1>ERROR: {{ detail }}</h1><br />
+            <h2>You will be soon redirected</h2>
+        </div>
+	</div>
+	<footer id='bottom'>
+		<span>
+			<span class=bottom_notes><a href="">{about us}</a></span>
+			<span class=bottom_notes><a href="">{terms}</a></span>
+			<span class=bottom_notes><a href="">{advertising}</a></span>
+			<span class=bottom_notes><a href="">{create a tutorial}</a></span>
+			<span class=bottom_notes><a href="">{help}</a></span>
+			<span class=bottom_notes style='margin: 0'>{<span style="font-family: 'fantasy'">&copy;</span> 2012 tutize.com}</span>
+			<span id="browser_rec" style="display:block;padding:10px 0 0px 0;">tutize.com recommends Firefox 9, Opera 11, Google Chrome 16, Safari 5<br /> or Internet Explorer 9 (and above) for optimal performance.</span>
+		</span>
+	</footer>
+</div>
+</body>
+</html>

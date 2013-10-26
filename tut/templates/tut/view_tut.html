@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{{ name }}</title>
+    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />-->
+    <!--<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>-->
+    <!--<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>-->
+    <!--<script src="snowflake/jQuery.js"></script>-->
+    <script type="text/javascript" src="/static/script/protoType.js"></script>
+    <!--<script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>-->
+    <script type="text/javascript" src="/static/script/jQuery.js"></script>
+    <script type="text/javascript" src="/static/script/jQueryAlerts/jquery.alerts.js"></script>
+    <link rel="stylesheet" href="/static/script/jQueryAlerts/jquery.alerts.css" />
+    <link rel="stylesheet" href="/static/styles/stylesheet4.css" />
+    <link rel="stylesheet" href="/static/styles/button.css" />
+    <script type="text/javascript">window._G_tutorialID = {{ t_id }};window._theme_ = {{ theme }};window._numStep_ = {{ step_n_detail|length }};</script>
+    <script type="text/javascript" src="/static/script/script4.js"></script>
+</head>
+
+<body id="body_id" onload="document.getElementById('body_id').style.visibility='visible'">
+    <div id="back">
+	<div class="pop_up_">
+	    <div id="pop_up_cont">
+		<div id="close"></div>
+		<div>
+			<h1>Want to create a tutorial?</h1>
+			<span>Log in as a registered user or register now in order to create a tutorial :)</span><div style="height: 2px;background: url('/static/verticalbar2.png');position: absolute;bottom: 0;left: 0;right: 0"></div>
+		</div>
+		<div id="su_si">
+		    <div class="fleft">
+			<h3 style="margin-bottom: 10px">Log In</h3>
+			<form id="log_in_form" method="post">
+			    <table>
+				<tr>
+				    <td><input data-allow="0" onfocus="inputCheck(this,'Email')" onblur="inputCheck2(this,'Email')" type='text' value='Email' /></td>
+				</tr>
+				<tr>
+				    <td><input data-allow="0" onfocus="inputCheck(this,'Password')" onblur="inputCheck2(this,'Password')" type='text' value='Password' /></td>
+				</tr>
+				<tr>
+				    <td width='290px' style="text-align: right"><a id="log_in" class="button white small"><span>Log In</span></a></td>
+				</tr>
+			    </table>
+			    <input type="submit" id="log_in_button" class="submit_button" />
+			</form>
+		    </div>
+		    <div class="fleft">
+			<h3 style="margin-bottom: 10px">Register Now !</h3>
+			<form id="register_form" method="post">
+				<table>
+				    <tr>
+					<td><input data-allow="0" onfocus="inputCheck(this,'Full&nbsp;name')" onblur="inputCheck2(this,'Full&nbsp;name')" type='text' value='Full&nbsp;name' /></td>
+				    </tr>
+				    <tr>
+					<td><input data-allow="0" onfocus="inputCheck(this,'Email')" onblur="inputCheck2(this,'Email')" type='text' value='Email' /></td>
+				    </tr>
+				    <tr>
+					<td><input data-allow="0" onfocus="inputCheck(this,'Password')" onblur="inputCheck2(this,'Password')" type='text' value='Password' /></td>
+				    </tr>
+				    <tr>
+					<td><input data-allow="0" onfocus="inputCheck(this,'Retype password')" onblur="inputCheck2(this,'Retype password')" type='text' value='Retype password' /></td>
+				    </tr>
+				    <tr>
+					<td width='290px' style="text-align: right"><a id='register' class="button white small"><span>Register</span></a></td>
+				    </tr>
+				</table>
+				<input class="submit_button" id="register_button" type="submit" />
+			    </form>
+			</div>
+		    </div>
+	    </div>
+	</div>
+	<script type="text/javascript">
+		$("#su_si").css("height",$("#su_si>div:nth-child(2)").css("height"));
+	</script>
+	<div id="top">
+	    <div id="innertop">
+		<div class="fleft" id="logo">
+	<!----->
+		</div>
+		<div class="fleft" id="login">
+		    <form id="loginf" method="GET" action="s.php">
+			<table id="loginform" cellspacing="0" cellpadding="0">
+			    <tr>
+				<td><input style="border-radius:0; background:transparent" onBlur="searchCheck2(this, 'Find a tutorial')" onFocus="searchCheck(this, 'Find a tutorial')" value="Find a tutorial" id="logemail" name="s" type="text" /></td>
+				<td><a onclick="return submitform('logsubmit')" href="/static/" class="button white small" style="border-radius:0"><span style="border-radius:0">Search</span></a></td>
+			    </tr>
+			</table>
+			<input class="submit_button" type="submit" id="logsubmit" />
+		    </form>
+		</div>
+        {% if user_name %}
+		<div class="fleft">
+		    <div class="fleft">
+			<img src="/static/pics/d_prof_pic.png" />
+		    </div>
+		    <div class="fleft">
+			<div>
+			    <span>{{ user_name }}</span>
+			</div>
+			<div>
+			    <a href="/users/logout/">Log Out</a>
+			</div>
+		    </div>
+		</div>
+        {% endif %}
+	    </div>
+	</div>
+	<div id='middle'>
+	    <div class="fleft">
+		<span data-n="1" class="selected">
+		    <img src="/static/pics/tutorials.png" width="32px" height="32px" style="vertical-align: middle;display: none"/>
+		    <img src="/static/pics/tutorials2.png" width="32px" height="32px" style="vertical-align: middle;"/>
+		    Like
+		</span>
+		<span data-n="2">
+		    <img src="/static/pics/subs.png" width="32px" height="32px" style="vertical-align: middle"/>
+		    <img src="/static/pics/subs2.png" width="32px" height="32px" style="vertical-align: middle;display: none"/>
+		    Share
+		</span>
+		<span data-n="3">
+		    <img src="/static/pics/fav.png" width="32px" height="32px" style="vertical-align: middle"/>
+		    <img src="/static/pics/fav2.png" width="32px" height="32px" style="vertical-align: middle;display: none"/>
+		    Add to bookmark
+		</span>
+		<span data-n="4">
+		    <img src="/static/pics/messages.png" width="32px" height="32px" style="vertical-align: middle"/>
+		    <img src="/static/pics/messages2.png" width="32px" height="32px" style="vertical-align: middle;display: none"/>
+		    Subscribe to author
+		</span>
+		<div style="border-bottom: solid 1px #037DA5"></div>
+		<span data-n="5">
+		    <img src="/static/pics/statistics.png" width="32px" height="32px" style="vertical-align: middle"/>
+		    <img src="/static/pics/statistics2.png" width="32px" height="32px" style="vertical-align: middle;display: none"/>
+		    Satistics
+		</span>
+		<span data-n="6">
+		    <img src="/static/pics/settings.png" width="32px" height="32px" style="vertical-align: middle"/>
+		    <img src="/static/pics/settings2.png" width="32px" height="32px" style="vertical-align: middle;display: none"/>
+		    Settings
+		</span>
+		<div style="border-bottom: solid 1px #037DA5"></div>
+		<span data-n="7">
+		    <img src="/static/pics/search.png" width="32px" height="32px" style="vertical-align: middle"/>
+		    <img src="/static/pics/search2.png" width="32px" height="32px" style="vertical-align: middle;display: none"/>
+		    Search Tutorials
+		</span>
+		<span data-n="8">
+		    <img src="/static/pics/search.png" width="32px" height="32px" style="vertical-align: middle"/>
+		    <img src="/static/pics/search2.png" width="32px" height="32px" style="vertical-align: middle;display: none"/>
+		    Search People
+		</span>
+	    </div>
+
+	    <div class="fleft">
+		<div class="display">
+		    <div>
+			<div><span>{{ name }}</span></div>
+		    </div>
+		    <div id="tut_content">
+                {% for val in step_n_detail %}
+                    <div>
+                        <div>
+                            <div class="t_tit">{{ val.0 }}</div>
+                            <span style="display: block;font-size: 0;line-height: 0;width: 626px;height: 1px;margin-left: -16px"><img src="/static/pics/hr-line.png" style="width: inherit" /></span>
+                            <div class="t_det">{{ val.1|safe }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+		    </div>
+            <div id="next_prev">
+                <span id="prev_step"><img src="/static/pics/prev.png" width="32px" height="32px" style="vertical-align: middle;margin-right:5px;"/> Previous</span>&nbsp;&nbsp;
+                <span id="play_step"><img src="/static/pics/play.png" width="32px" height="32px" style="vertical-align: middle;margin-right:5px;"/> Slideshow</span>&nbsp;&nbsp;
+                <span id="reset_step"><img src="/static/pics/reset.png" width="32px" height="32px" style="vertical-align: middle;margin-right:5px;"/> Reset</span>&nbsp;&nbsp;
+                <span id="next_step"><img src="/static/pics/next.png" width="32px" height="32px" style="vertical-align: middle;margin-right:5px;"/> Next</span>
+            </div>
+		</div>
+		<div>
+		    <div>
+			<div><span>My Subscriptions</span></div>
+		    </div>
+		    <div>
+
+		    </div>
+		</div>
+		<div>
+		    <div>
+			<div><span>My Bookmarks</span></div>
+		    </div>
+		    <div>
+
+		    </div>
+		</div>
+		<div>
+		    <div>
+			<div><span>Messages</span></div>
+		    </div>
+		    <div>
+
+		    </div>
+		</div>
+		<div>
+		    <div>
+			<div><span>Statistics</span></div>
+		    </div>
+		    <div>
+
+		    </div>
+		</div>
+		<div>
+		    <div>
+			<div><span>Settings</span></div>
+		    </div>
+		    <div>
+
+		    </div>
+		</div>
+		<div>
+		    <div>
+			<div><span>Search Tutorials</span></div>
+		    </div>
+		    <div>
+
+		    </div>
+		</div>
+		<div>
+		    <div>
+			<div><span>Search People</span></div>
+		    </div>
+		    <div>
+
+		    </div>
+		</div>
+	    </div>
+	    <div id="sponsor" class="fleft">
+		<div>
+		    <span>Our sponsor:</span>
+		    <span>Place your ad here !</span>
+		</div>
+		<div>
+		    <table id="ads_table">
+			<tr>
+			    <td><div><div id="div_1"><span id="span_1">Ad slot 1</span></div></div></td>
+			    <td><div><div id="div_2"><span id="span_2">Ad slot 2</span></div></div></td>
+			</tr>
+			<tr>
+			    <td><div><div id="div_3"><span id="span_3">Ad slot 3</span></div></div></td>
+			    <td><div><div id="div_4"><span id="span_4">Ad slot 4</span></div></div></td>
+			</tr>
+			<tr>
+			    <td><div><div id="div_5"><span id="span_5">Ad slot 5</span></div></div></td>
+			    <td><div><div id="div_6"><span id="span_6">Ad slot 6</span></div></div></td>
+			</tr>
+		    </table>
+		</div>
+	    </div>
+	</div>
+	<footer id='bottom'>
+	    <span>
+		<span class=bottom_notes><a href="/static/">{about us}</a></span>
+		<span class=bottom_notes><a href="/static/">{terms}</a></span>
+		<span class=bottom_notes><a href="/static/">{advertising}</a></span>
+		<span class=bottom_notes><a href="/static/">{create a tutorial}</a></span>
+		<span class=bottom_notes><a href="/static/">{help}</a></span>
+		<span class=bottom_notes style='margin: 0'>{<span style="font-family: 'fantasy'">&copy;</span> 2012 tutize.com}</span>
+	    </span>
+	</footer>
+    </div>
+</body>
+</html>

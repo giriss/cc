@@ -1,0 +1,178 @@
+<!--
+ REPLACE 'Ubuntu' WITH 'Ubuntu'
+-->
+{{ error }}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="icon" type="image/png" href="{% static 'favicon.png'%}" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>tutize.com | Home</title>
+	<!--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>-->
+	<script type="text/javascript" src="{% static 'script/unPack.js' %}"></script>
+	<script type="text/javascript" src="{% static 'script/jQuery.js'%}"></script>
+	<script type="text/javascript" src="{% static 'script/jAlert/javascript/jquery.toastmessage.js'%}"></script>
+	<link rel="stylesheet" href="{% static 'script/jAlert/resources/css/jquery.toastmessage.css'%}" />
+	<link rel="stylesheet" href="{% static 'styles/stylesheet1.css'%}" />
+	<link rel="stylesheet" href="{% static 'styles/button.css'%}" />
+	<script type="text/javascript" src="{% static 'script/script1.js'%}"></script>
+</head>
+
+<body id="body_id" onload="document.getElementById('body_id').style.visibility='visible'">
+<div id="back">
+	<div class="pop_up_">
+		<div id="pop_up_cont">
+			<div id="close"></div>
+			<div>
+				<h1>Want to create a tutorial?</h1>
+				<span>Log in as a registered user or register now in order to create a tutorial :)</span><div style="height: 2px;background: url(/static/verticalbar2.png);position: absolute;bottom: 0px;left: 0;right: 0"></div>
+			</div>
+			<div id="su_si">
+				<div class="fleft">
+					<h3 style="margin-bottom: 10px">Log In</h3>
+					<form action="{% url 'users:login' %}" id="log_in_form" method="post">{% csrf_token %}
+						<table>
+							<tr>
+								<td><input name="email" type='email' placeholder='Email' /></td>
+							</tr>
+							<tr>
+								<td><input name="pass" type='password' placeholder='Password' /></td>
+							</tr>
+							<tr>
+								<td width='290px' style="text-align: right"><a id="log_in" class="button white small"><span>Log In</span></a></td>
+							</tr>
+						</table>
+						<input type="submit" id="log_in_button" class="submit_button" />
+					</form>
+				</div>
+				<div class="fleft">
+					<h3 style="margin-bottom: 10px">Register Now !</h3>
+					<form action="{% url 'users:register' %}" id="register_form" method="POST">{% csrf_token %}
+						<table>
+							<tr>
+								<td><input name="name" type='text' placeholder='Full&nbsp;name' /></td>
+							</tr>
+							<tr>
+								<td><input name="email" type='email' placeholder='Email' /></td>
+							</tr>
+							<tr>
+								<td><input name="pass" type='password' placeholder='Password' /></td>
+							</tr>
+							<tr>
+								<td><input type='password' placeholder='Retype password' /></td>
+							</tr>
+							<tr>
+								<td width='290px' style="text-align: right"><a id='register' class="button white small"><span>Register</span></a></td>
+							</tr>
+						</table>
+						<input class="submit_button" id="register_button" type="submit" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$("#su_si").css("height",$("#su_si>div:nth-child(2)").css("height"));
+	</script>
+	<div id="top">
+		<div id="innertop">
+			<div class="fleft" id="logo">
+            	<!----->
+			</div>
+			<div class="fleft" id="login">
+				<form id="loginf" method="GET" action="s.php">
+					<table id="loginform" cellspacing="0" cellpadding="0">
+							<tr>
+								<td><input style="border-radius:0; background:transparent" placeholder="Find a tutorial" id="logemail" name="s" type="text" /></td>
+								<td><a onclick="return submitform('logsubmit')" href="" class="button white small" style="border-radius:0"><span style="border-radius:0">Search</span></a></td>
+							</tr>
+					</table>
+					<input class="submit_button" type="submit" id="logsubmit" />
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id='middle'>
+		<div class="fleft" style='width: 22px;height: 196px;padding-top: 156px'>
+			<img class='nextPrevImg' src="{% static 'snowflake/arrow_prev2.png'%}" id="prevImg" onclick="animateL()" />
+		</div>
+		<div id='slideDiv' class=fleft>
+			<div id="slidingDiv">
+				<div class="fleft" id="slider2" style="text-align:center">
+					<div id='text1' style="color: #037DA5;  text-shadow:0 0 10px #037DA5;font:400 20px/1 'Ubuntu';text-align:center;">
+						<h2>What is tutize.com? O_o</h2><br />
+						<span style=''>
+                            You have something to share or teach?? Share it here on tutize.com and earn the money you deserve $_$
+                            <br />
+                            tutize.com allows you to monitize your knowledge
+						</span><br />
+					</div>
+					<div id="cr_2si" style="margin:25px auto 0 auto; display:inline-block">
+						<a href="" class="button blue small t_shadow" style="margin-right:10px"><span>Create Tutorial</span></a><a href="" class="button t_shadow white small" style="margin-right:10px"><span>Log In</span></a><a href="" class="button white t_shadow small" ><span>Register</span></a>
+					</div>
+				</div>
+				<div class="fleft" id="slider1">
+					<div style="margin:12px 0 0 0; width:500px;height:277px; background:none">
+                        <span>
+                            - Create your own tutorial now<br /><br />- Edit and customize your tutorial<br /><br />- Share and popularize your tutorial<br /><br />- earn money according to the<br />fiability of your tutorial
+                        </span>
+					</div>
+				</div>
+				<div class="fleft" id="slider3">
+					<div style="color: #03F;font-size: 20px;font-weight: bold;text-align:center;">
+						ZingReal helps you to share, discuss and get to know other students throughout Mauritius.
+					</div>
+					<div style="margin:auto; width:420px">
+						<img src="" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="fleft" style='width: 22px;height: 196px;padding-top: 156px'>
+			<img class='nextPrevImg' src="{% static 'snowflake/arrow_next2.png'%}" id="nextImg" onclick="animateR()" />
+		</div>
+		<div id='sponsor' class="fleft">
+			<div>
+				<span>Our sponsor:</span>
+				<span>Place your ad here !</span>
+			</div>
+			<div>
+				<table id="ads_table">
+					<tr>
+						<td><div><div id="div_1"><span id="span_1">Ad slot 1</span></div></div></td>
+						<td><div><div id="div_2"><span id="span_2">Ad slot 2</span></div></div></td>
+					</tr>
+					<tr>
+						<td><div><div id="div_3"><span id="span_3">Ad slot 3</span></div></div></td>
+						<td><div><div id="div_4"><span id="span_4">Ad slot 4</span></div></div></td>
+					</tr>
+					<tr>
+						<td><div><div id="div_5"><span id="span_5">Ad slot 5</span></div></div></td>
+						<td><div><div id="div_6"><span id="span_6">Ad slot 6</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div> 
+		<div id="slide_circle">
+			<div>
+				<span onclick="skipToSliderNum('0px')" class="fleft" id='sliderCircle1'></span>
+				<span onclick="skipToSliderNum('-502px')" class="fleft" id='sliderCircle2'></span>
+				<span onclick="skipToSliderNum('-1004px')" class="fleft" id='sliderCircle3'></span>
+			</div>
+		</div>
+	</div>
+	<footer id='bottom'>
+		<span>
+			<span class=bottom_notes><a href="">{about us}</a></span>
+			<span class=bottom_notes><a href="">{terms}</a></span>
+			<span class=bottom_notes><a href="">{advertising}</a></span>
+			<span class=bottom_notes><a href="">{create a tutorial}</a></span>
+			<span class=bottom_notes><a href="">{help}</a></span>
+			<span class=bottom_notes style='margin: 0'>{<span style="font-family: 'fantasy'">&copy;</span> 2012 tutize.com}</span>
+			<span id="browser_rec" style="display:block;padding:10px 0 0px 0;">tutize.com recommends Firefox 9, Opera 11, Google Chrome 16, Safari 5<br /> or Internet Explorer 9 (and above) for optimal performance.</span>
+		</span>
+	</footer>
+</div>
+</body>
+</html>

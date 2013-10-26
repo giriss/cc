@@ -1,0 +1,27 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+<script type="text/javascript">
+    function sub(){
+        $.ajax({
+            url:"{% url 'users:ajax' %}",
+            type:"GET",
+            data:{var:$("#in").val(),csrfmiddlewaretoken:$("#aj>input").val()},
+            success:function(html){
+                alert(html)
+            }
+        })
+        return false
+    }
+</script>
+
+Hello<br />
+<h1>First form</h1>
+<form action="{% url 'users:register' %}" method="POST">{% csrf_token %}
+    <input type="text" name="name" />
+    <input type="submit" />
+</form>
+<h1>Ajax Form ;)</h1>
+<form id="aj" onsubmit="return sub()" action="" method="POST">{% csrf_token %}
+    <input id="in" type="text" />
+    <input type="submit" />
+</form>
