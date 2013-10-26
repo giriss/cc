@@ -165,7 +165,7 @@ overflow-x: hidden;
 }
 #tut_content>div{
     display: none;
-    min-height: 200px;
+    /* min-height: 200px; */
 }
 #next_prev{
     padding: 10px 20px;
