@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'tutize.views.home', name='home'),
     # SSL verification
-    url(r'CF46647BFFCA31CA77A05EE6D3380D9C.txt^$', 'tutize.views.sslverify', name='SSL'),
+    url(r'^CF46647BFFCA31CA77A05EE6D3380D9C.txt$', 'tutize.views.sslverify', name='SSL'),
     # url(r'^tutize/', include('tutize.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
