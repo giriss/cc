@@ -41,7 +41,7 @@ def register(request):
         user_add = user(fullName=fn, email=em, password=pw, dateJoined=dt)
         user_add.save()
         request.session['userId'] = user_add.id
-        request.session['userName'] = user_add.fullName
+        request.session['userName'] = fn
         return HttpResponseRedirect(reverse('home'))
 
 
