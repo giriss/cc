@@ -16,7 +16,7 @@ DATABASES = {
         # The following settings are not used with sqlite3:
         'USER': 'uipgs03r134089dj',
         'PASSWORD': '7950f70fbf5a4cbea6dde6fc8f0b52c1',
-        'HOST': 'boqf6r3mqf10u6q3.postgresql.clvrcld.net ',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'HOST': 'boqf6r3mqf10u6q3.postgresql.clvrcld.net',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
     }
 }
@@ -72,7 +72,6 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "C:/Users/Akhilesh/tutize/static",
 )
 
 # List of finder classes that know how to find static files in
@@ -84,7 +83,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '#sm3b8tmwmzmg33!^^(0r_^*b2p-taje-j*m_(*fdwzv6@p+@r'
+SECRET_KEY = 'iajpvha8_u4eyz$jukc9r8seen27^pv(t=l=qogxefgr)1*umj'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -112,7 +111,6 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "templates/",
 )
 
 INSTALLED_APPS = (
@@ -123,14 +121,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    'django.contrib.admin',
+    # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    'django.contrib.admindocs',
-    'users',
-    'u',
-    'xmlfiles',
-    'tut',
+    # 'django.contrib.admindocs',
 )
+
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

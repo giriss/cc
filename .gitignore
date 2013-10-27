@@ -1,3 +1,5 @@
 venv
 *.pyc
-tutorial_xmls
+cc_tut
+certs
+database
