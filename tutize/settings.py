@@ -16,7 +16,7 @@ DATABASES = {
         # The following settings are not used with sqlite3:
         'USER': 'uipgs03r134089dj',
         'PASSWORD': '7950f70fbf5a4cbea6dde6fc8f0b52c1',
-        'HOST': 'http://boqf6r3mqf10u6q3.postgresql.clvrcld.net ',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'HOST': 'boqf6r3mqf10u6q3.postgresql.clvrcld.net ',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
     }
 }
@@ -72,7 +72,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "C:/Users/Akhilesh/tutize/static",
+    "static/",
 )
 
 # List of finder classes that know how to find static files in
