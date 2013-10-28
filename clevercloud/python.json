@@ -1,6 +1,6 @@
 {
         "deploy": {
                 "module":"cc_django_wsgi",
-                "static": "/static/"
+                "static": "/"
         }
 }
