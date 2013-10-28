@@ -21,7 +21,7 @@ def home(request):
             num_likes = tut.likes
             num_views = tut.views
             num_u_views = tut.uniqueViews
-            file_open = gzip.open("tutorial_xmls/compressed/%s.xml.gz" % tut.pk, 'rb')
+            file_open = gzip.open("bucket/tutorials/comp/%s.xml.gz" % tut.pk, 'rb')
             xml_string = file_open.read()
             file_open.close()
             root = ET.fromstring(xml_string)
