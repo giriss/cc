@@ -93,4 +93,9 @@ def add_tut(request):
         f = gzip.open('tutorial_xmls/compressed/%s.xml.gz' % str(tut_id), 'wb', 9)
         f.write(xml_string)
         f.close()
+        session = ftplib.FTP('ftpes://upload.clever-cloud.com/', 'user266d22310740435d917d86ae8139c404', 'Hq7vSYEoihPtBv')
+        file = open('tutorial_xmls/compressed/%s.xml.gz' % str(tut_id),'rb')                  # file to send
+        session.storbinary('STOR tutorials/comp/%s.xml.gz' % str(tut_id), file)     # send the file
+        file.close()                                    # close file and FTP
+        session.quit()
         return HttpResponse(str(tut_id))
