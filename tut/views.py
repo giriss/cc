@@ -9,6 +9,7 @@ from u.models import tutorial
 import re
 import gzip
 import ftplib
+import os
 #import zlib
 
 
@@ -99,4 +100,5 @@ def add_tut(request):
         session.storbinary('STOR tutorials/comp/%s.xml.gz' % str(tut_id), file)     # send the file
         file.close()                                    # close file and FTP
         session.quit()
+        os.remove("tutorial_xmls/compressed/%s.xml.gz" % str(tut_id))
         return HttpResponse(str(tut_id))
