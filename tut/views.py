@@ -26,7 +26,7 @@ def view_tut(request, t_id=None):
     """
     try:
         tut = tutorial.objects.get(pk=t_id)
-        xml_file = gzip.open("tutorial_xmls/compressed/%s.xml.gz" % t_id, "rb")
+        xml_file = gzip.open("bucket/tutorials/comp/%s.xml.gz" % t_id, "rb")
         xml_string = xml_file.read()
         xml_file.close()
     except ObjectDoesNotExist:
