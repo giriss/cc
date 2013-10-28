@@ -8,6 +8,7 @@ import xml.etree.ElementTree as ET
 from u.models import tutorial
 import re
 import gzip
+import ftplib
 #import zlib
 
 
